@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PfSense Voucher Printer</title>
+    <meta name="description" content="Print your PfSense captive portal voucher rolls easily!">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="form">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/PfSense_logo.png/1200px-PfSense_logo.png" alt="PfSense logo" height="50px">
+        <h1>PfSense Voucher Printer</h1>
+        <p>Print your PfSense captive portal voucher rolls easily!</p>
+        <h2>Usage / Howto</h2>
+        <ol>
+            <li>Generate a voucher roll from PfSense GUI, download the CSV file generated.</li>
+            <li>Fill out the form below, don't forget to upload the CSV file!</li>
+            <li>Click on the generate button, and if you're satisfied : click on the print button.</li>
+        </ol>
+
+        <div>
+            <label for="form__header">Header text</label>
+            <input type="text" name="form__header" id="form__header" value="WiFi Hotspot">
+        </div>
+        <div>
+            <label for="form__intro">Intro text</label>
+            <input type="text" name="form__intro" id="form__intro" value="Connect to the wireless network XXX, open your web browser and type the characters below when asked:">
+        </div>
+        <div>
+            <label for="form__outro">Outro text</label>
+            <input type="text" name="form__outro" id="form__outro" value="This voucher is valid for 120 minutes once used for the first time.">
+        </div>
+        <div>
+            <label for="form__footer">Footer text</label>
+            <input type="text" name="form__footer" id="form__footer" value="Company Name">
+        </div>
+        
+        <div>
+            <label for="upload">CSV File</label>
+            <input type="file" name="upload" id="upload">
+        </div>
+        
+
+        <div id="form__actions">
+            <button id="generate">Generate</button>
+            <button id="print" disabled>Print</button>
+        </div>
+        
+    </div>
+    
+    <div id="vouchers">
+
+    </div>
+
+    <template id="voucher_template">
+        <div class="voucher">
+            <span class="header"></span>
+            <span class="intro"></span>
+            <h2 class="code"></h2>
+            <span class="outro"></span>
+            <span class="footer"></span>
+        </div>
+    </template>
+
+    <script src="app.js"></script>
+</body>
+</html>

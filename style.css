@@ -1,0 +1,92 @@
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+#vouchers {
+    display: table;
+    /* flex-direction: row;
+    flex-wrap: wrap; */
+    /* border-spacing : 0;
+    border-collapse : collapse; */
+}
+
+label {
+    display: block;
+    margin-top: 0.5em;
+}
+
+#form__actions {
+    margin-top: 0.5em;
+}
+
+input[type=text] {
+    width: 500px;
+}
+
+.voucher {
+    display: inline-block;
+
+    /* border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid white; */
+
+    /* border:1px solid red; */
+
+    margin-bottom: 3px;
+
+    width: 32%;
+
+    text-align: center;
+
+    break-inside: avoid;
+
+    font-size: 0.8em;
+}
+
+.voucher .header,.footer {
+    width: 100%;
+    display: block;
+    text-align: center;
+    background-color: black;
+    color:white;
+    padding: 0.3em 0;
+}
+
+.voucher .intro {
+    display: block;
+    margin-top: 1em;
+
+    font-size: 0.5em;
+}
+
+.voucher .outro {
+    display: block;
+    margin-bottom: 1em;
+
+    font-size: 0.5em;
+}
+
+.voucher .code {
+    font-family: 'Roboto Mono', monospace;
+}
+
+
+@media print {
+    #form {
+        display: none;
+    }
+
+    .voucher {
+        break-inside: avoid;
+    }
+
+    #vouchers > h2 {
+        display: none;
+    }
+}
+
+@media screen {
+    #vouchers {
+        max-width: 800px;
+    }
+}
